@@ -15,5 +15,5 @@ Some examples of models downloaded from the internet<br/>
 <p align="center">
   1- Stall:<br/>
   <br/>
-  <img src="https://raw.githubusercontent.com/ShayaP/3DReconstruction/master/result.png"/><br/>
+  <img src="https://raw.githubusercontent.com/ShayaP/GameEngine/master/result.png"/><br/>
 </p>

@@ -35,8 +35,12 @@ public class OBJLoader {
 				line = reader.readLine();
 				String[] currLine = line.split(" ");
 				if (line.startsWith("v ")) {
-					Vector3f vertex = new Vector3f(Float.parseFloat(currLine[1]), Float.parseFloat(currLine[2]), Float.parseFloat(currLine[3]));
-					vertices.add(vertex);
+					try {
+						Vector3f vertex = new Vector3f(Float.parseFloat(currLine[1]), Float.parseFloat(currLine[2]), Float.parseFloat(currLine[3]));
+						vertices.add(vertex);
+					} catch (Exception e) {
+						System.out.println("caught error while reading file");
+					}
 				} else if (line.startsWith("vt ")) {
 					Vector2f texture = new Vector2f(Float.parseFloat(currLine[1]), Float.parseFloat(currLine[2]));
 					textures.add(texture);

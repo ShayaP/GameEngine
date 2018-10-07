@@ -23,10 +23,10 @@ public class Main {
 		GUIShader shaderGUI = new GUIShader();
 		
 		
-		Model model = OBJLoader.loadModel("caucasian_male.obj", loader);
+		Model model = OBJLoader.loadModel("female2.obj", loader);
 		ModelTexture texture = new ModelTexture(loader.loadTexture("human_male_diffuse.png"));
 		TexturedModel texModel = new TexturedModel(model, texture);
-		Entity entity = new Entity(texModel,0,0,0,1,new Vector3f(0,-1,-4));
+		Entity entity = new Entity(texModel,0,0,0,1,new Vector3f(0,-1,-3));
 		Camera camera = new Camera();
 		
 

@@ -29,6 +29,27 @@ public class Camera {
 		}
 	}
 	
+	public void move(Cloud entity) {
+		if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
+			position.z -= 0.02f;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
+			position.x -= 0.02f;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
+			position.x += 0.02f;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
+			entity.increaseRotation(0, 1, 0);
+		} 
+		if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
+			entity.increaseRotation(0, -1, 0);
+		} 
+		if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
+			position.z += 0.02f;
+		}
+	}
+	
 	public Camera() {}
 
 	public Vector3f getPosition() {

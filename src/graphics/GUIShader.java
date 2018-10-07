@@ -17,12 +17,12 @@ public class GUIShader extends ShaderProgram{
         super.loadMatrix(location_transformationMatrix, matrix);
     }
  
-    @Override
+	@Override
     protected void getAllUniformLocations() {
         location_transformationMatrix = super.getUniformLocation("transformationMatrix");
     }
  
-    @Override
+	@Override
     protected void bindAttributes() {
         super.bindAttribute(0, "position");
     }

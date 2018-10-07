@@ -58,6 +58,15 @@ public class MasterRenderer {
 		entities.clear();
 	}
 	
+	public void render(Camera camera, Cloud cloud) {
+		prepare();
+		shader.start();
+		shader.loadViewMatrix(camera);
+		renderer.renderCloud(cloud);
+		shader.stop();
+		entities.clear();
+	}
+	
 	private void createProjectionMatrix() {
 		float aspectRatio = (float) Display.getWidth() / (float) Display.getHeight();
 		float y_scale = (float) ((1f / Math.tan(Math.toRadians(FOV / 2f))) * aspectRatio);

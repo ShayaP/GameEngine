@@ -36,6 +36,12 @@ public class EntityRenderer {
 		}
 	}
 	
+	public void renderCloud(Cloud cloud) {
+		prepareInstance(cloud);
+		GL11.glDrawElements(GL11.GL_POINTS, cloud.getModel().getVertecCount(), GL11.GL_UNSIGNED_INT, 0);
+		unbindTexturedModel();
+	}
+	
 	private void prepareTexturedModel(TexturedModel texModel) {
 		Model model = texModel.getModel();
 		GL30.glBindVertexArray(model.getVaoId());
@@ -50,6 +56,12 @@ public class EntityRenderer {
 		GL30.glBindVertexArray(0);
 	}
 	private void prepareInstance(Entity entity) {
+		Matrix4f transformationMatrix = Maths.createTransformationMatrix(entity.getPosition(), entity.getRx(),
+				entity.getRy(), entity.getRz(), entity.getScale());
+		shader.loadMatrix(transformationMatrix);
+	}
+	
+	private void prepareInstance(Cloud entity) {
 		Matrix4f transformationMatrix = Maths.createTransformationMatrix(entity.getPosition(), entity.getRx(),
 				entity.getRy(), entity.getRz(), entity.getScale());
 		shader.loadMatrix(transformationMatrix);

@@ -2,7 +2,7 @@
   <b>Description</b><br/>
 </p>  
 
-This is a samll game engine that loads vertices, triangulates them and texturizes the mesh. Using OpenGl the digital model is shown in 3d space.
+This is a small game engine that loads vertices, triangulates them and texturizes the mesh. Using OpenGl the digital model is shown in 3d space.
 The model can be moved rotated and zoomed in on. 
 
 Note: this project requires OpenGL<br/>      
